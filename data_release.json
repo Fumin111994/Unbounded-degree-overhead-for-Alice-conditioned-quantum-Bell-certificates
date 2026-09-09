@@ -1,0 +1,11 @@
+{
+  "dataset_title": "Research data for Unbounded degree overhead for Alice-conditioned quantum Bell certificates",
+  "version": "0.1.0",
+  "archive_filename": "bell_certificate_data_v0.1.0.zip",
+  "sha256": "f2e5b7301c70e2f5bc41226c22cc0b10951d1cccbb0509e5a46bb97741de99b7",
+  "bytes": 1174569,
+  "license": "CC-BY-4.0",
+  "zenodo_doi": null,
+  "repository_url": null,
+  "note": "DOI and public URLs will be assigned on publication."
+}

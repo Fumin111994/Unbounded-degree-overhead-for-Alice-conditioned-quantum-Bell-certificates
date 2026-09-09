@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite this software and its accompanying paper when using this code."
+type: software
+title: "Reproducibility code for Unbounded degree overhead for Alice-conditioned quantum Bell certificates"
+authors:
+  - family-names: Wang
+    given-names: Fumin
+version: 0.1.0
+license: MIT
+abstract: "Exact certificate verification and numerical exploration of standard and Alice-conditioned Bell hierarchies."
+keywords:
+  - Bell inequalities
+  - semidefinite programming
+  - sum of squares
+  - quantum information

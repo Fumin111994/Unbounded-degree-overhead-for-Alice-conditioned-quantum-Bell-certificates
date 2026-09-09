@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "npa2"
+version = "0.1.0"
+description = "Auditable standard and one-sided NPA control implementations"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [{name = "Fumin Wang"}]
+requires-python = ">=3.11"
+dependencies = [
+  "cvxpy==1.8.2",
+  "numpy==2.4.4",
+  "scipy==1.17.1",
+  "sympy==1.14.0",
+]
+
+[project.optional-dependencies]
+plots = ["matplotlib==3.10.9"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
