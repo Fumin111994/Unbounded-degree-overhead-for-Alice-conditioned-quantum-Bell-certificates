@@ -1,78 +1,38 @@
-# Reproduction guide
+# Reproduction for version 0.2.0
 
-Run every command from the repository root with the data archive extracted.
-The default validation is independent of the original working directory.
+The default `python scripts/run_reproduction.py` is the solver-free entry.
+Its six stages include the complete exact checker (28 groups), stored control
+matrix verification, exact level-one checks, standard-family identities,
+anchor coverage, and exact level-two witness checks.
 
-## Exact checks
-
-```text
-python scripts/run_reproduction.py
-```
-
-This performs the 21-group core checker and five independent legacy controls.
-No SDP solver is used by this default workflow; floating-point exported controls
-are rechecked numerically and are not promoted to exact certificates.
-The full exact checker does not sample the interval identity: it reduces the
-rational functions coefficient-wise and verifies all Bernstein PSD matrices.
-
-Useful targeted checks:
+The seven added analytic audit scripts, all included in this release, are:
 
 ```text
-python scripts/higher_level_witness.py --fejer
-python scripts/standard_tilted_sos.py
-python scripts/quantum_interval.py
-python scripts/quantum_face.py
-python scripts/randomness_cost.py
+python scripts/verify_precision_bounds.py
+python scripts/verify_fixed_tilt_closure.py
+python scripts/verify_matching_upper.py
+python scripts/verify_orientation_structure.py
+python scripts/verify_orientation_counterexample.py
+python scripts/verify_asymmetric_family.py
+python scripts/verify_asymmetric_transition.py
 ```
 
-## Tests and optional numerical regeneration
+`verify_asymmetric_transition.py` checks 20 exact audit groups,
+including the quartic threshold factorization, Markov normalization and
+three complete polynomial pole cancellations. Exact Sturm checks additionally
+establish global block positivity at the sharp threshold and for two degree-25
+certificates (one interior tilt and one critical tilt). See PROOF_AUDIT.md. The compactness, symmetry and
+Markov steps are analytic arguments in the supplement.
 
-```text
-python -m unittest discover -s tests
-python scripts/run_reproduction.py --full
-```
+`python scripts/run_reproduction.py --full` additionally invokes SDP solvers
+for numerical controls and unit tests. Numerical searches and plots have
+different evidential status from exact symbolic and rational checks.
 
-The first command includes rejection tests for corrupted identities and positivity
-claims. `--full` also reruns historical numerical searches/controls and may be
-slow. Solvers CLARABEL/SCS are pinned in requirements-lock.txt. Solver results
-can vary by platform; exact certificate verification uses the archived payloads.
-`--skip-slow` omits checks and is not a substitute for complete verification.
+The data release inherits the curated 0.1.0 certificate catalog and adds all
+current `artifacts/prl` JSON outputs. Historic numerical experiments remain
+labeled as such. The current environment uses cvxpy 1.8.2, not 1.9.1;
+requirements-lock.txt records the exact dependency versions.
 
-## Result / artifact / generator
-
-| Result | Data path | Rebuild command |
-| --- | --- | --- |
-| Fejer family audit | artifacts/prl/fejer/exact_validation.json | python scripts/higher_level_witness.py --fejer --output artifacts/prl/fejer/exact_validation.json |
-| Exact interval | artifacts/prl/interval/level3_interval.json | python scripts/run_quantum_interval.py |
-| Five optimal-face points | artifacts/prl/quantum_face/ | python scripts/run_quantum_face.py --alpha 1 --level 2 (and the other four paper parameters) |
-| Randomness witness | artifacts/prl/randomness/cost.json | python scripts/randomness_cost.py --write |
-| Numerical guessing curve | artifacts/prl/randomness/curve.json | python scripts/run_randomness_curve.py |
-| Numerical degree survey | artifacts/prl/fejer/numerical_saturation.json | python scripts/survey_conditioned_degree.py |
-
-To rebuild all five point certificates, use `run_quantum_face.py` with
-`--alpha 1 --level 2`, `--alpha 5/4 --level 2`, `--alpha 41/32 --level 2`,
-`--alpha 13/10 --level 3`, and `--alpha 3/2 --level 3` (one invocation each).
-After the default degree survey, `python scripts/survey_conditioned_degree.py --audit`
-adds the independently assembled checks at the sensitive numerical points.
-
-## Figures
-
-```text
-python scripts/plot_unbounded_cost.py
-python scripts/plot_randomness_cost.py
-python scripts/make_prl_figure.py
-python scripts/make_figures.py
-```
-
-The first three use stored data; `make_figures.py` also performs numerical
-calculations. Its `fig1.pdf` is an older diagnostic plot, not the current main
-Fig. 1; use `plot_unbounded_cost.py` for the current main Fig. 1. Figure outputs go into `figures/`. Matplotlib is included in the
-dependency lock, unlike the earlier four-package scientific-core list.
-
-## Limits
-
-Native degree uses reduced PVM words and fixed Alice/Bob roles. The public code
-does not assert equivalence to every POVM/localizer filtration. The compiled-game
-consequence is restricted to the paper's specified nice-SOS certificate route.
-Numerical threshold crossing is distinct from exact closure. None of these
-programs constitutes a finite-key randomness protocol or a generic security proof.
+Release validation is run from a separate combined copy of these code/data
+files. The archived run passed all six stages and all 28 exact groups, without skips.
+Reports are included under artifacts/reproduction/release_0.2.0 in the data ZIP.
