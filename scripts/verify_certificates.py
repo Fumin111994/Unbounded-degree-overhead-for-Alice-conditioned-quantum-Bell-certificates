@@ -43,6 +43,13 @@ from standard_tilted_sos import verify_stored as check_standard_tilted_sos  # no
 from quantum_interval import verify_all as check_quantum_interval  # noqa: E402
 from randomness_cost import verify_all as check_randomness_cost  # noqa: E402
 from higher_level_witness import verify_all as check_higher_level, verify_analytic_family, verify_fejer_family  # noqa: E402
+from verify_precision_bounds import verify_precision_bounds  # noqa: E402
+from verify_fixed_tilt_closure import verify_fixed_tilt_closure  # noqa: E402
+from verify_matching_upper import verify_matching_upper  # noqa: E402
+from verify_orientation_structure import verify as check_orientation_structure  # noqa: E402
+from verify_orientation_counterexample import verify as check_orientation_counterexample  # noqa: E402
+from verify_asymmetric_transition import verify as check_asymmetric_transition  # noqa: E402
+from verify_asymmetric_family import verify as check_asymmetric_family  # noqa: E402
 
 T = sp.Symbol("t")
 SSTAR = sp.Rational(1, 50_000_000)
@@ -438,6 +445,13 @@ def check_m6_rootlocus() -> dict:
 
 
 CHECKS = [
+    ("asymmetric_sharp_weight_transition", False, check_asymmetric_transition),
+    ("asymmetric_uniform_closure_audits", False, check_asymmetric_family),
+    ("orientation_structure_audits", False, check_orientation_structure),
+    ("bob_marginal_exact_counterexample", False, check_orientation_counterexample),
+    ("matching_upper_bound_audits", False, verify_matching_upper),
+    ("fixed_tilt_exact_closure_audits", False, verify_fixed_tilt_closure),
+    ("finite_precision_rounding_audits", False, verify_precision_bounds),
     ("square_root_degree_fejer_family", False, verify_fejer_family),
     ("unbounded_conversion_analytic_family", False, verify_analytic_family),
     ("higher_level_rational_counterexamples", False, check_higher_level),
