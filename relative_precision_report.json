@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "checks": [
+    "rationalized quantum-gap identity",
+    "linear part of stable witness identity",
+    "advantage quadratic coefficient",
+    "fixed-level linear witness coefficient",
+    "joint inverse-degree asymptotic coefficient",
+    "witness error on the advantage scale",
+    "relative-tolerance threshold",
+    "strictly decreasing threshold function",
+    "local bound on all 256 deterministic assignments throughout the parameter rectangle",
+    "attaining local assignment",
+    "four-involution conditional word count through levels 1 to 5",
+    "49 independent standard words through total degree two",
+    "figure epsilon range satisfies the degree-upper-bound hypothesis"
+  ],
+  "scope": "Symbolic identities and constants supporting Supplementary Corollary on relative accuracy; the text provides the analytic proof."
+}

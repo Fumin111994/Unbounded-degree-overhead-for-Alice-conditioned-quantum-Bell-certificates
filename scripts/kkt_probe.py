@@ -20,7 +20,7 @@ and the tilted-CHSH objective F(alpha) = alpha*E_A0 + CHSH reduces to
 This script solves the 8-variable reduced SDP and the full SDP with
 build_onesided_problem(..., 1, enforce_probability_positivity=False) on the
 m26 grid and checks agreement to 1e-6.  Idempotent: re-running overwrites
-artifacts/m26/kkt/probe.json.
+data/level_one_family/kkt/probe.json.
 """
 
 from __future__ import annotations
@@ -37,8 +37,8 @@ from npa2.bell import tilted_chsh  # noqa: E402
 from npa2.onesided import build_onesided_problem  # noqa: E402
 from npa2.solve import solve_problem  # noqa: E402
 
-GRID_PATH = Path("artifacts/m26/grid/grid.json")
-OUT_PATH = Path("artifacts/m26/kkt/probe.json")
+GRID_PATH = Path("data/level_one_family/grid/grid.json")
+OUT_PATH = Path("data/level_one_family/kkt/probe.json")
 TOL = 1e-6
 
 SOLVER_OPTS = dict(

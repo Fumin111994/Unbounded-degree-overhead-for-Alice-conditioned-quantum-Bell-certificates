@@ -71,7 +71,7 @@ def main():
     }
     if any(checks[key] > 2e-6 for key in checks if key != "os2_min_positive_gap"):
         raise RuntimeError(f"Numerical cross-check failed: {checks}")
-    out = ROOT / "artifacts/prl/randomness/curve.json"
+    out = ROOT / "data/analytic/randomness/curve.json"
     out.write_text(json.dumps({"method": "Numerical illustration; two unnormalized guessing branches; raw PVM",
                                "checks": checks, "records": records}, indent=2)+"\n")
     print(json.dumps(checks, indent=2))

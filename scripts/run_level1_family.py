@@ -21,7 +21,7 @@ for the raw CFNZ Eq. (2.7) cone (no probability-positivity constraints).
   identity in the PVM quotient algebra with alpha symbolic.  All square
   coefficients are nonnegative for alpha >= 0.
 
-Output: artifacts/m26/family/standard_family.json
+Output: data/level_one_family/family/standard_family.json
 """
 
 from __future__ import annotations
@@ -80,7 +80,7 @@ def tilted_polynomial(alpha) -> exact.SymPoly:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--output", type=Path, default=ROOT / "artifacts" / "m26" / "family"
+        "--output", type=Path, default=ROOT / "data" / "level_one_family" / "family"
     )
     args = parser.parse_args()
 

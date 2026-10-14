@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """M3: verify a shortlisted candidate (dual solvers, full-outcome, strategy).
 
-For a candidate record from artifacts/m3/search*/results.json:
+For a candidate record from data/finite_separations/search*/results.json:
 
 1. re-solves std L2/L3 and os L2/L3 (raw cone) with CLARABEL and SCS;
 2. re-solves std L2 and os L2/L3 with the full-outcome implementation
@@ -10,7 +10,7 @@ For a candidate record from artifacts/m3/search*/results.json:
    |psi> = cos t |00> + sin t |11>, projective measurements on the Bloch
    sphere (differential evolution + polish), to confirm omega_q = omega_std2.
 
-Output: artifacts/m3/candidates/<tag>.json
+Output: data/finite_separations/candidates/<tag>.json
 """
 
 from __future__ import annotations
@@ -116,7 +116,7 @@ def main() -> int:
     parser.add_argument("--index", type=int, required=True)
     parser.add_argument("--tag", default=None)
     parser.add_argument(
-        "--output", type=Path, default=ROOT / "artifacts" / "m3" / "candidates"
+        "--output", type=Path, default=ROOT / "data" / "finite_separations" / "candidates"
     )
     parser.add_argument("--solvers", nargs="+", default=["CLARABEL", "SCS"])
     args = parser.parse_args()

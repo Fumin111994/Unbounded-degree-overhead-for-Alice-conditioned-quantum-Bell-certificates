@@ -11,7 +11,7 @@ so the one-sided level-2 value is pinned to the explicit interval
 field).  This is the fallback if the exact boundary certificate (bound
 exactly q(alpha)) cannot be produced.
 
-Output: artifacts/m6/epsilon_closure.json
+Output: data/conditioned_closure/epsilon_closure.json
 """
 
 from __future__ import annotations
@@ -34,7 +34,7 @@ from run_m6_closure import exact_tilted_functional, quantum_alg  # noqa: E402
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m6")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "conditioned_closure")
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--max-denominator", type=int, default=10**6)
     parser.add_argument("--alphas", nargs="+", default=["5/4", "41/32"])

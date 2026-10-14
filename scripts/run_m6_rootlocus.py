@@ -17,7 +17,7 @@ isolating interval (sympy Poly.intervals, refined to width <= 2^-60).  All
 comparisons (root > q, root < q + s*) are exact CRootOf arithmetic; s* is
 certified, not floated.
 
-Output: artifacts/m6/rootlocus.json
+Output: data/conditioned_closure/rootlocus.json
 """
 
 from __future__ import annotations
@@ -71,7 +71,7 @@ def exact_root_record(poly: sp.Poly, root, q_root) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m6")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "conditioned_closure")
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--max-denominator", type=int, default=10**6)
     parser.add_argument("--alphas", nargs="+", default=["5/4", "41/32"])

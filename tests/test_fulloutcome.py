@@ -19,7 +19,7 @@ from npa2.solve import solve_problem
 from npa2.standard import build_standard_problem
 
 ROOT = Path(__file__).resolve().parents[1]
-EXACT_DIR = ROOT / "artifacts" / "m25" / "exact"
+EXACT_DIR = ROOT / "data" / "level_one_exact" / "exact"
 
 
 class FullOutcomeAlgebraTests(unittest.TestCase):

@@ -19,12 +19,12 @@ class QuantumFaceTests(unittest.TestCase):
         return verify_certificate
 
     def payload(self):
-        return json.loads((ROOT / 'artifacts/prl/quantum_face/generic_face_1_L2.json').read_text())
+        return json.loads((ROOT / 'data/analytic/quantum_face/generic_face_1_L2.json').read_text())
 
     def test_five_certificates_without_solver(self):
         verify = self.verifier()
         import cvxpy as cp
-        paths = list((ROOT / 'artifacts/prl/quantum_face').glob('*.json'))
+        paths = list((ROOT / 'data/analytic/quantum_face').glob('*.json'))
         self.assertEqual(len(paths), 5)
         with patch.object(cp.Problem, 'solve', side_effect=AssertionError('solver forbidden')):
             for path in paths:

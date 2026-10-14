@@ -10,7 +10,7 @@ by high-precision null-space + continued-fraction rational reconstruction,
 and verifies the candidate on all computed points.  For regime I the ansatz
 is in y = omega^2 (biquadratic structure seen in algdep).
 
-Point cache: artifacts/m26/kkt/identify_points.json (reused across runs).
+Point cache: data/level_one_family/kkt/identify_points.json (reused across runs).
 """
 
 from __future__ import annotations
@@ -27,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from kkt_refine import solve_alpha  # noqa: E402
 
-CACHE_PATH = Path("artifacts/m26/kkt/identify_points.json")
+CACHE_PATH = Path("data/level_one_family/kkt/identify_points.json")
 ALPHA_C = 1 - 1 / mp.sqrt(3)
 DPS = 110
 

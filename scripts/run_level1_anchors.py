@@ -21,7 +21,7 @@ argument then extends the separation to all alpha in an interval:
 Comparisons with 2 sqrt(2) + alpha are exact: for rational r > 0,
 r < 2 sqrt(2)  iff  r^2 < 8, checked with Fraction arithmetic.
 
-Output: artifacts/m26/anchors/{anchor_*.json, coverage.json}
+Output: data/level_one_family/anchors/{anchor_*.json, coverage.json}
 """
 
 from __future__ import annotations
@@ -121,7 +121,7 @@ def separated_exactly(U: Fraction, alpha: Fraction) -> bool:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--output", type=Path, default=ROOT / "artifacts" / "m26" / "anchors"
+        "--output", type=Path, default=ROOT / "data" / "level_one_family" / "anchors"
     )
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--max-denominator", type=int, default=10**6)

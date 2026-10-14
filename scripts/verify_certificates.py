@@ -14,7 +14,7 @@ Usage:
     python scripts/verify_certificates.py              # all checks
     python scripts/verify_certificates.py --skip-slow  # skip level-3 PSD
 
-Output: artifacts/reproduction/certificate_checks.json
+Output: data/reproduction/certificate_checks.json
 """
 
 from __future__ import annotations
@@ -107,24 +107,24 @@ def frac(text: str) -> Fraction:
 
 
 def check_m3_exact(tag: str) -> dict:
-    payload = read(f"artifacts/m3/exact/{tag}.json")
+    payload = read(f"data/finite_separations/exact/{tag}.json")
     return verify_artifact(payload)
 
 
 def check_m3_o3() -> dict:
-    lead = read("artifacts/m3/exact/search_s31337_308.json")
-    payload = read("artifacts/m3/exact/o3_308.json")
+    lead = read("data/finite_separations/exact/search_s31337_308.json")
+    payload = read("data/finite_separations/exact/o3_308.json")
     return verify_dual(rebuild_functional(lead), payload)
 
 
 def check_m3_robust() -> dict:
-    source = read("artifacts/m3/exact/search_s31337_308.json")
+    source = read("data/finite_separations/exact/search_s31337_308.json")
     computed = compute_robustness(source, Fraction(1, 400))
     failures = list(computed["failures"])
     if not computed["value_identity_ok"]:
         failures.append("value identity recomputation failed")
     # the stored artifact must agree with the recomputation
-    robust = read("artifacts/m3/robust_family.json")
+    robust = read("data/finite_separations/robust_family.json")
     if robust.get("value_identity_check") != "PASS":
         failures.append("stored robust_family.json not PASS")
     if frac(robust["witness_value_exact"]) != computed["w"]:
@@ -180,7 +180,7 @@ def check_m6_direct_pins() -> dict:
         "41/32": Fraction(3359047968197, 1000000000000),
     }
     for tag, expected_bound in expected.items():
-        path = f"artifacts/m6/direct_pin_{tag.replace('/', '_')}.json"
+        path = f"data/conditioned_closure/direct_pin_{tag.replace('/', '_')}.json"
         try:
             payload = read(path)
         except FileNotFoundError:
@@ -218,7 +218,7 @@ EXPECTED_NONCLOSURE_ALPHAS = ["13/10", "3/2"]
 
 def check_m26_anchors() -> dict:
     failures = []
-    paths = sorted((ROOT / "artifacts/m26/anchors").glob("anchor_*.json"))
+    paths = sorted((ROOT / "data/level_one_family/anchors").glob("anchor_*.json"))
     alphas = [p.stem.replace("anchor_", "").replace("_", "/") for p in paths]
     if sorted((Fraction(a) for a in alphas)) != [Fraction(a) for a in EXPECTED_ANCHORS]:
         failures.append(f"anchor set mismatch: {sorted(alphas, key=Fraction)}")
@@ -246,7 +246,7 @@ def check_m26_endpoint() -> dict:
 
 
 def check_m65_sandwich() -> dict:
-    payload = read("artifacts/m65/sandwich.json")
+    payload = read("data/contact_geometry/sandwich.json")
     alpha = Fraction(payload["alpha"])
     report = verify_witness(exact_tilted_functional(alpha), 1, payload["witness"])
     failures = list(report["failures"])
@@ -259,7 +259,7 @@ def check_m65_sandwich() -> dict:
 
 
 def check_m6_nonclosure() -> dict:
-    summary = read("artifacts/m6/summary.json")
+    summary = read("data/conditioned_closure/summary.json")
     failures = []
     items = summary["results"]["nonclosure"]
     alphas = [item["alpha"] for item in items]
@@ -279,7 +279,7 @@ def check_m6_nonclosure() -> dict:
 
 
 def check_m6_epsilon_closure() -> dict:
-    payload = read("artifacts/m6/epsilon_closure.json")
+    payload = read("data/conditioned_closure/epsilon_closure.json")
     failures = []
     results = payload["results"]
     alphas = [item["alpha"] for item in results]
@@ -312,7 +312,7 @@ def check_m6_epsilon_closure() -> dict:
 
 
 def check_m6_o3() -> dict:
-    payload = read("artifacts/m6/o3_certificates.json")
+    payload = read("data/conditioned_closure/o3_certificates.json")
     failures = []
     results = payload["results"]
     alphas = [item["alpha"] for item in results]
@@ -343,7 +343,7 @@ def check_m6_o3() -> dict:
 
 
 def check_m65_tangent_fan() -> dict:
-    payload = read("artifacts/m65/tangent_fan.json")
+    payload = read("data/contact_geometry/tangent_fan.json")
     failures = []
     fan = payload["fan"]
     fan_alphas = [item["alpha"] for item in fan]
@@ -398,7 +398,7 @@ def check_m65_tangent_fan() -> dict:
 
 
 def check_m6_rootlocus() -> dict:
-    payload = read("artifacts/m6/rootlocus.json")
+    payload = read("data/conditioned_closure/rootlocus.json")
     failures = []
     results = payload["results"]
     alphas = [r["alpha"] for r in results]
@@ -481,7 +481,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--skip-slow", action="store_true",
                         help="skip checks marked slow (level-3 PSD, fan)")
     parser.add_argument("--output", type=Path,
-                        default=ROOT / "artifacts" / "reproduction")
+                        default=ROOT / "data" / "reproduction")
     args = parser.parse_args(argv)
 
     records = []

@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "method": "solver-free re-verification from stored artifacts: affine identities coefficient-wise, exact rational LDL* PSD tests, consistency/normalization, exact comparisons (squaring, CRootOf, root isolation); cvxpy.Problem.solve patched to raise",
+  "skip_slow": false,
+  "seconds": 81.3,
+  "records": [
+    {
+      "name": "asymmetric_sharp_weight_transition",
+      "status": "PASS",
+      "seconds": 3.6,
+      "failures": []
+    },
+    {
+      "name": "asymmetric_uniform_closure_audits",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "orientation_structure_audits",
+      "status": "PASS",
+      "seconds": 0.7,
+      "failures": []
+    },
+    {
+      "name": "bob_marginal_exact_counterexample",
+      "status": "PASS",
+      "seconds": 0.4,
+      "failures": []
+    },
+    {
+      "name": "matching_upper_bound_audits",
+      "status": "PASS",
+      "seconds": 0.2,
+      "failures": []
+    },
+    {
+      "name": "fixed_tilt_exact_closure_audits",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "finite_precision_rounding_audits",
+      "status": "PASS",
+      "seconds": 0.6,
+      "failures": []
+    },
+    {
+      "name": "square_root_degree_fejer_family",
+      "status": "PASS",
+      "seconds": 1.2,
+      "failures": []
+    },
+    {
+      "name": "unbounded_conversion_analytic_family",
+      "status": "PASS",
+      "seconds": 1.0,
+      "failures": []
+    },
+    {
+      "name": "higher_level_rational_counterexamples",
+      "status": "PASS",
+      "seconds": 0.8,
+      "failures": []
+    },
+    {
+      "name": "randomness_cost_exact_witness",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "quantum_interval_exact_closure",
+      "status": "PASS",
+      "seconds": 41.4,
+      "failures": []
+    },
+    {
+      "name": "standard_tilted_symbolic_sos",
+      "status": "PASS",
+      "seconds": 0.8,
+      "failures": []
+    },
+    {
+      "name": "quantum_face_exact_closure",
+      "status": "PASS",
+      "seconds": 25.3,
+      "failures": []
+    },
+    {
+      "name": "attainment_matrices",
+      "status": "PASS",
+      "seconds": 0.0,
+      "failures": []
+    },
+    {
+      "name": "m3_exact_search_s31337_308",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "m3_exact_search_s777_298",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "m3_o3_308",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "m3_robust_family",
+      "status": "PASS",
+      "seconds": 0.0,
+      "failures": []
+    },
+    {
+      "name": "m26_anchors",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "m26_chsh_endpoint",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "m65_sandwich",
+      "status": "PASS",
+      "seconds": 0.0,
+      "failures": []
+    },
+    {
+      "name": "m6_nonclosure_witnesses",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "m6_direct_pins",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "m6_epsilon_closure",
+      "status": "PASS",
+      "seconds": 0.1,
+      "failures": []
+    },
+    {
+      "name": "m6_o3_certificates",
+      "status": "PASS",
+      "seconds": 0.2,
+      "failures": []
+    },
+    {
+      "name": "m65_tangent_fan",
+      "status": "PASS",
+      "seconds": 4.2,
+      "failures": []
+    },
+    {
+      "name": "m6_rootlocus",
+      "status": "PASS",
+      "seconds": 0.0,
+      "failures": []
+    }
+  ],
+  "status": "PASS",
+  "failures": []
+}

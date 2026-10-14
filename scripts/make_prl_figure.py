@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[1]
-data=json.loads((ROOT/'artifacts/figures/fig1_data.json').read_text())
-fan=json.loads((ROOT/'artifacts/m65/tangent_fan.json').read_text())
-zoom=json.loads((ROOT/'artifacts/figures/prl_zoom_numerical.json').read_text())['records']
+data=json.loads((ROOT/'data/figures/fig1_data.json').read_text())
+fan=json.loads((ROOT/'data/contact_geometry/tangent_fan.json').read_text())
+zoom=json.loads((ROOT/'data/figures/prl_zoom_numerical.json').read_text())['records']
 alphas=np.array(data['alphas'])
 gap=np.array(data['gap'])
 lo,hi=fan['covered_interval_float']
@@ -66,16 +66,16 @@ fig.savefig(ROOT/'figures/prl_quantum_gap.pdf')
 (ROOT/'tmp/prl-theorem').mkdir(parents=True,exist_ok=True)
 fig.savefig(ROOT/'tmp/prl-theorem/prl_quantum_gap.png',dpi=180)
 plt.close(fig)
-(ROOT/'artifacts/figures/prl_quantum_gap_data.json').write_text(json.dumps({
-    'numerical_source':'artifacts/figures/fig1_data.json',
-    'zoom_numerical_source':'artifacts/figures/prl_zoom_numerical.json',
+(ROOT/'data/figures/prl_quantum_gap_data.json').write_text(json.dumps({
+    'numerical_source':'data/figures/fig1_data.json',
+    'zoom_numerical_source':'data/figures/prl_zoom_numerical.json',
     'numerical_values_modified':False,
     'exact_level_two_points':['1','5/4','41/32'],
     'exact_level_three_points':['13/10','3/2'],
     'exact_level_three_interval':['13/10','3/2'],
     'level_three_display':'separate categorical closure strip',
-    'interval_certificate':'artifacts/prl/interval/level3_interval.json',
-    'exact_certificate_directory':'artifacts/prl/quantum_face',
+    'interval_certificate':'data/analytic/interval/level3_interval.json',
+    'exact_certificate_directory':'data/analytic/quantum_face',
     'certified_nonclosure_interval':fan['covered_interval'],
     'candidate_boundary_numerical':1.28427,
     'note':'No interval of level-two exact closure or unique transition is claimed.'},indent=2))

@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
-FAMILY_DIR = ROOT / "artifacts" / "m26" / "family"
-ANCHORS_DIR = ROOT / "artifacts" / "m26" / "anchors"
+FAMILY_DIR = ROOT / "data" / "level_one_family" / "family"
+ANCHORS_DIR = ROOT / "data" / "level_one_family" / "anchors"
 
 
 class StandardFamilyTests(unittest.TestCase):

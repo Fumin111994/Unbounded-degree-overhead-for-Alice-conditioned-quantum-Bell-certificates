@@ -16,7 +16,7 @@ exact rational quadratic inequality
 Its roots are computed exactly and the union of the resulting intervals is
 checked to cover [alpha_cov, 2).
 
-Output: artifacts/m65/tangent_fan.json
+Output: data/contact_geometry/tangent_fan.json
 """
 
 from __future__ import annotations
@@ -96,7 +96,7 @@ def interval_above_q(g: Fraction, h: Fraction):
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m65")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "contact_geometry")
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--witness-max-denominator", type=int, default=10**8)
     parser.add_argument(

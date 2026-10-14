@@ -13,7 +13,7 @@ sys.path.insert(0,str(ROOT/'src'))
 from npa2 import exact
 from npa2.bell import Scenario
 
-ARTIFACT=ROOT/'artifacts/prl/standard_tilted/family.json'
+ARTIFACT=ROOT/'data/analytic/standard_tilted/family.json'
 
 
 def verify_family(second_square_sign=1):

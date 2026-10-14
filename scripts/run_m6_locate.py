@@ -3,7 +3,7 @@
 
 Computes omega_os^2(alpha) on a grid and compares with the quantum value
 sqrt(8 + 2 alpha^2); refines the threshold by bisection; tries to identify
-alpha* algebraically.  Output: artifacts/m6/locate.json
+alpha* algebraically.  Output: data/conditioned_closure/locate.json
 """
 
 from __future__ import annotations
@@ -41,7 +41,7 @@ def values(alpha: float) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m6")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "conditioned_closure")
     args = parser.parse_args()
 
     grid = [1.0 + 0.05 * k for k in range(0, 11)]

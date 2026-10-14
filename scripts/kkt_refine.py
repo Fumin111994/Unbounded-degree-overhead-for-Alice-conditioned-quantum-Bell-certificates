@@ -45,7 +45,7 @@ import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-OUT_PATH = Path("artifacts/m26/kkt/refined.json")
+OUT_PATH = Path("data/level_one_family/kkt/refined.json")
 
 # ---------------------------------------------------------------------------
 # Symbolic equation construction
@@ -132,7 +132,7 @@ def refine_regime1(alpha, start9, dps=50):
 
         root = mp.findroot(system, tuple(mp.mpf(x) for x in start9), tol=mp.mpf(10) ** (-(dps - 10)))
         omega = _R1_OMEGA(*root, a)
-        names = ("p", "q1", "r1", "v", "w", "z", "m0", "m1", "m2")
+        names = ("p", "q1", "r1", "v", "w", "z", "m0", "m1", "convention_checks")
         return omega, dict(zip(names, root))
     finally:
         mp.mp.dps = old
@@ -309,7 +309,7 @@ def main() -> None:
             return vars_["q1"], vars_
 
         q_lo, vars_lo = q1_of(a_lo, start)
-        start_hi = tuple(vars_lo[k] for k in ("p", "q1", "r1", "v", "w", "z", "m0", "m1", "m2"))
+        start_hi = tuple(vars_lo[k] for k in ("p", "q1", "r1", "v", "w", "z", "m0", "m1", "convention_checks"))
         q_hi, vars_hi = q1_of(a_hi, start_hi)
         print(f"q1({mp.nstr(a_lo,10)}) = {mp.nstr(q_lo,10)}")
         print(f"q1({mp.nstr(a_hi,10)}) = {mp.nstr(q_hi,10)}")
@@ -317,7 +317,7 @@ def main() -> None:
         curr = (a_hi, q_hi, vars_hi)
         for _ in range(12):
             a_new = curr[0] - curr[1] * (curr[0] - prev[0]) / (curr[1] - prev[1])
-            start = tuple(curr[2][k] for k in ("p", "q1", "r1", "v", "w", "z", "m0", "m1", "m2"))
+            start = tuple(curr[2][k] for k in ("p", "q1", "r1", "v", "w", "z", "m0", "m1", "convention_checks"))
             q_new, vars_new = q1_of(a_new, start)
             print(f"q1({mp.nstr(a_new, 20)}) = {mp.nstr(q_new, 10)}")
             prev, curr = curr, (a_new, q_new, vars_new)

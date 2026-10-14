@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
-M6 = ROOT / "artifacts" / "m6"
+M6 = ROOT / "data" / "conditioned_closure"
 
 
 class M6ArtifactTests(unittest.TestCase):

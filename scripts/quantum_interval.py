@@ -16,7 +16,7 @@ from npa2 import exact
 from run_m6_closure import exact_tilted_functional
 
 U=sp.Symbol('u')
-ARTIFACT=ROOT/'artifacts/prl/interval/level3_interval.json'
+ARTIFACT=ROOT/'data/analytic/interval/level3_interval.json'
 
 
 def load_certificate():

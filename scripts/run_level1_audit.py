@@ -28,7 +28,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=ROOT / "artifacts" / "m2" / "level1_audit",
+        default=ROOT / "data" / "convention_checks" / "level1_audit",
     )
     parser.add_argument("--solvers", nargs="+", default=["CLARABEL", "SCS"])
     parser.add_argument(

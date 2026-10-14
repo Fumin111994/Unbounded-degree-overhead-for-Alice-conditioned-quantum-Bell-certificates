@@ -1,13 +1,11 @@
 cff-version: 1.2.0
-message: "Please cite the associated paper and version v0.2.0 used."
-type: software
-title: "Code for Contact geometry and sharp degree costs of quantum Bell certificates"
+message: "Please cite this software and the separately archived companion dataset."
+title: "Code for The cost of direction in quantum Bell certification"
 authors:
   - family-names: Wang
     given-names: Fumin
-version: 0.2.0
+version: 0.3.0
+date-released: 2026-10-14
 license: MIT
 repository-code: "https://github.com/Fumin111994/Unbounded-degree-overhead-for-Alice-conditioned-quantum-Bell-certificates"
-abstract: "Exact Bell-certificate audits, degree bounds and numerical exploration."
-date-released: 2026-10-06
-url: "https://github.com/Fumin111994/Unbounded-degree-overhead-for-Alice-conditioned-quantum-Bell-certificates/releases/tag/v0.2.0"
+url: "https://github.com/Fumin111994/Unbounded-degree-overhead-for-Alice-conditioned-quantum-Bell-certificates/tree/v0.3.0"

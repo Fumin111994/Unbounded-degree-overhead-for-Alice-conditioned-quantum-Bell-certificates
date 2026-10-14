@@ -20,7 +20,7 @@ from npa2.standard import build_standard_problem  # noqa: E402
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--output", type=Path, default=ROOT / "artifacts" / "m26" / "grid"
+        "--output", type=Path, default=ROOT / "data" / "level_one_family" / "grid"
     )
     parser.add_argument(
         "--alphas",

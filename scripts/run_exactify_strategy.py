@@ -6,7 +6,7 @@ on the free stationarity system, then attempts algebraic identification of
 the value and the Bloch components.  Exact verification (norms and value)
 is done with sympy.
 
-Output: artifacts/m3/exact/strategy_308.json
+Output: data/finite_separations/exact/strategy_308.json
 """
 
 from __future__ import annotations
@@ -64,7 +64,7 @@ def gradient(params, corr, amarg, bmarg, h=mp.mpf("1e-25")):
 
 def main() -> int:
     payload = json.loads(
-        (ROOT / "artifacts/m3/candidates/candidate_search_s31337_308.json"
+        (ROOT / "data/finite_separations/candidates/candidate_search_s31337_308.json"
          ).read_text()
     )
     func = payload["functional"]
@@ -114,8 +114,8 @@ def main() -> int:
         print(f"  {name}: {found if found else 'unidentified'}")
         out[name] = {"poly": found[1] if found else None,
                      "value": mp.nstr(x, 40)}
-    (ROOT / "artifacts/m3/exact").mkdir(parents=True, exist_ok=True)
-    (ROOT / "artifacts/m3/exact/strategy_308_raw.json").write_text(
+    (ROOT / "data/finite_separations/exact").mkdir(parents=True, exist_ok=True)
+    (ROOT / "data/finite_separations/exact/strategy_308_raw.json").write_text(
         json.dumps(out, indent=2)
     )
     return 0

@@ -24,7 +24,7 @@ witness values numerically); every verification step runs in exact arithmetic.
 ``--verify-only`` reloads the exported artifacts and re-verifies them without
 any solver.
 
-Output: artifacts/m25/exact/*.json
+Output: data/level_one_exact/exact/*.json
 """
 
 from __future__ import annotations
@@ -274,7 +274,7 @@ def verify_onesided_artifact(payload: dict) -> dict:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--output", type=Path, default=ROOT / "artifacts" / "m25" / "exact"
+        "--output", type=Path, default=ROOT / "data" / "level_one_exact" / "exact"
     )
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--witness-max-denominator", type=int, default=10**3)

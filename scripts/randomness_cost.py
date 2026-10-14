@@ -22,8 +22,8 @@ from npa2 import exact
 from run_m6_closure import exact_tilted_functional
 from run_m65_tangent_fan import witness_gh
 
-ARTIFACT = ROOT / "artifacts/prl/randomness/cost.json"
-FAN = ROOT / "artifacts/m65/tangent_fan.json"
+ARTIFACT = ROOT / "data/analytic/randomness/cost.json"
+FAN = ROOT / "data/contact_geometry/tangent_fan.json"
 
 
 def verify_blocks(entries):

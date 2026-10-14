@@ -10,11 +10,11 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 SEARCH_RESULTS = [
-    ROOT / "artifacts" / "m3" / "search" / "results.json",
-    ROOT / "artifacts" / "m3" / "search_s777" / "results.json",
-    ROOT / "artifacts" / "m3" / "search_s31337" / "results.json",
+    ROOT / "data" / "finite_separations" / "search" / "results.json",
+    ROOT / "data" / "finite_separations" / "search_s777" / "results.json",
+    ROOT / "data" / "finite_separations" / "search_s31337" / "results.json",
 ]
-EXACT_ARTIFACT = ROOT / "artifacts" / "m3" / "exact" / "search_s31337_308.json"
+EXACT_ARTIFACT = ROOT / "data" / "finite_separations" / "exact" / "search_s31337_308.json"
 
 
 class M3SearchTests(unittest.TestCase):
@@ -41,7 +41,7 @@ class M3SearchTests(unittest.TestCase):
         self.assertEqual(report["status"], "PASS", report["failures"])
 
     def test_o3_membership_artifact(self) -> None:
-        path = ROOT / "artifacts" / "m3" / "exact" / "o3_308.json"
+        path = ROOT / "data" / "finite_separations" / "exact" / "o3_308.json"
         if not (path.exists() and EXACT_ARTIFACT.exists()):
             self.skipTest("run the O_3 certificate computation first")
         from fractions import Fraction

@@ -30,7 +30,7 @@ def verify(root: Path, manifest: Path) -> list[str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--root", type=Path, default=ROOT, help="Directory containing artifacts/ and figures/")
+    parser.add_argument("--root", type=Path, default=ROOT, help="Directory containing data/ and figures/")
     args = parser.parse_args()
     manifest = ROOT / "DATA_MANIFEST.json"
     if not manifest.is_file():

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "points": 260,
+  "precision_digits": 80,
+  "minimum_threshold_margin": 5.0452589584523585e-16,
+  "SDP_optimization": false
+}

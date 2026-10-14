@@ -13,7 +13,7 @@ so the Bell-gap polynomial  eta*I - F_G  lies in D_2 but not in O_2: the
 certificate cones are separated at native level two (D_2 not subset O_2).
 
 The solver is used only to find candidates; verification is exact rational
-arithmetic.  Output: artifacts/m3/exact/<tag>.json
+arithmetic.  Output: data/finite_separations/exact/<tag>.json
 """
 
 from __future__ import annotations
@@ -329,12 +329,12 @@ def main() -> int:
     parser.add_argument(
         "--results",
         type=Path,
-        default=ROOT / "artifacts" / "m3" / "search_s31337" / "results.json",
+        default=ROOT / "data" / "finite_separations" / "search_s31337" / "results.json",
     )
     parser.add_argument("--index", type=int, default=308)
     parser.add_argument("--tag", default=None)
     parser.add_argument(
-        "--output", type=Path, default=ROOT / "artifacts" / "m3" / "exact"
+        "--output", type=Path, default=ROOT / "data" / "finite_separations" / "exact"
     )
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--functional-max-denominator", type=int, default=10**3)

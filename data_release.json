@@ -1,8 +1,9 @@
 {
-  "version": "0.2.0",
-  "filename": "bell_certificate_data_v0.2.0.zip",
-  "doi": "10.5281/zenodo.23179029",
-  "record_url": "https://zenodo.org/records/23179029",
-  "sha256": "bded0b0dd4bff59df6a871c0a023259b1e3f90c92077f4bcc35c38c45ae59ffd",
-  "previous_doi": "10.5281/zenodo.22672612"
+  "version": "0.3.0",
+  "filename": "bell_certificate_data_v0.3.0.zip",
+  "record_url": "https://zenodo.org/records/23356474",
+  "sha256": "194b484fad54af30a08fa12dc5c86c872915daeef6324719a3abb279c1bad066",
+  "bytes": 2091066,
+  "license": "CC-BY-4.0",
+  "doi": "10.5281/zenodo.23356474"
 }

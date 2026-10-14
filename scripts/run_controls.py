@@ -31,7 +31,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=ROOT / "artifacts" / "m2" / "canonical",
+        default=ROOT / "data" / "convention_checks" / "canonical",
         help="Artifact directory",
     )
     parser.add_argument(

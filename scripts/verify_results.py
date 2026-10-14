@@ -14,7 +14,7 @@ from npa2.verify import verify_artifacts  # noqa: E402
 
 
 def main() -> int:
-    output = ROOT / "artifacts" / "m2" / "canonical"
+    output = ROOT / "data" / "convention_checks" / "canonical"
     report = verify_artifacts(output)
     (output / "verification.json").write_text(
         json.dumps(report, indent=2, sort_keys=True), encoding="utf-8"

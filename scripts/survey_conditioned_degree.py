@@ -16,7 +16,7 @@ import scipy.sparse as sparse
 from higher_level_witness import words,key,numeric_problem
 
 ROOT=Path(__file__).resolve().parents[1]
-DEFAULT=ROOT/'artifacts/prl/fejer/numerical_saturation.json'
+DEFAULT=ROOT/'data/analytic/fejer/numerical_saturation.json'
 
 
 def problem_at_level(k):

@@ -8,8 +8,8 @@ from pathlib import Path
 import sympy as sp
 
 ROOT = Path(__file__).resolve().parents[1]
-M65 = ROOT / "artifacts" / "m65"
-M3EXACT = ROOT / "artifacts" / "m3" / "exact"
+M65 = ROOT / "data" / "contact_geometry"
+M3EXACT = ROOT / "data" / "finite_separations" / "exact"
 
 
 class TangentFanTests(unittest.TestCase):

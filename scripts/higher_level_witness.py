@@ -21,7 +21,7 @@ from npa2 import exact
 from run_m6_closure import exact_tilted_functional
 from standard_tilted_sos import verify_stored
 
-ARTIFACTS=ROOT/'artifacts/prl/higher_level'
+ARTIFACTS=ROOT/'data/analytic/higher_level'
 
 
 def reduced(word):

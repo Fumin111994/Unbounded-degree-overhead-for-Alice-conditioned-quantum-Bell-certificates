@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """M6: exact one-sided LEVEL-3 certificates for tilted CHSH, tight bounds.
 
-Regenerates artifacts/m6/o3_certificates.json at alpha = 3/2 and 13/10 with
+Regenerates data/conditioned_closure/o3_certificates.json at alpha = 3/2 and 13/10 with
 rational bounds B certified to satisfy B - q(alpha) < 1e-6 EXACTLY (rational
 square comparison against q^2 = 8 + 2 alpha^2), fixing the previous version
 whose bounds landed at 1.000067e-6 and 1.000313e-6 above q.
@@ -15,7 +15,7 @@ both sides rational.  The full certificate payload (S blocks, L, nu) is
 stored, matching the previous artifact's structure.
 
 No solver is used for verification; the solver only seeds the rational
-candidate.  Output: artifacts/m6/o3_certificates.json
+candidate.  Output: data/conditioned_closure/o3_certificates.json
 """
 
 from __future__ import annotations
@@ -58,7 +58,7 @@ def certified_above_q(bound: Fraction, alpha: Fraction) -> bool:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m6")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "conditioned_closure")
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--max-denominator", type=int, default=10**6)
     parser.add_argument("--alphas", nargs="+", default=["3/2", "13/10"])

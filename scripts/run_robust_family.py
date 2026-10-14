@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Uniform level-two separation on an l1 neighbourhood of G* (round-7 upgrade).
 
-For the lead candidate G* of artifacts/m3/exact/search_s31337_308.json, with
+For the lead candidate G* of data/finite_separations/exact/search_s31337_308.json, with
 exact one-sided level-two witness value w and eta = 501/200, this script
 certifies: the exact margin w - eta exceeds 1/200, hence for r = 1/400 and
 eta' = eta + r = 1003/400, EVERY coefficient vector theta in the
@@ -184,9 +184,9 @@ def main() -> int:
     parser.add_argument(
         "--source",
         type=Path,
-        default=Path("artifacts/m3/exact/search_s31337_308.json"),
+        default=Path("data/finite_separations/exact/search_s31337_308.json"),
     )
-    parser.add_argument("--output", type=Path, default=Path("artifacts/m3"))
+    parser.add_argument("--output", type=Path, default=Path("data/finite_separations"))
     parser.add_argument("--radius", default="1/400")
     args = parser.parse_args()
 

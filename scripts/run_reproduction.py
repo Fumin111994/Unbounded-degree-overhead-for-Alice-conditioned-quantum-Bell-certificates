@@ -16,7 +16,7 @@ floating-point controls, searches, and audits.
 
     python scripts/run_reproduction.py --full
 
-Output: artifacts/reproduction/report.json
+Output: data/reproduction/report.json
 """
 
 from __future__ import annotations
@@ -55,7 +55,7 @@ def main() -> int:
     parser.add_argument("--skip-slow", action="store_true",
                         help="pass --skip-slow to verify_certificates.py")
     parser.add_argument("--output", type=Path,
-                        default=ROOT / "artifacts" / "reproduction")
+                        default=ROOT / "data" / "reproduction")
     args = parser.parse_args()
 
     verify_cmd = [PY, "scripts/verify_certificates.py"]

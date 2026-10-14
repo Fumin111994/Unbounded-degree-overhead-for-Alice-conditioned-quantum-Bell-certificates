@@ -27,7 +27,7 @@ from pathlib import Path
 
 import sympy as sp
 
-OUT_PATH = Path("artifacts/m26/kkt/regime2_elimination.json")
+OUT_PATH = Path("data/level_one_family/kkt/regime2_elimination.json")
 
 
 def main() -> None:

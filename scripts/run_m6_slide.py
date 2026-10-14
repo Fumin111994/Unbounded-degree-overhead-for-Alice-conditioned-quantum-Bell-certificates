@@ -19,7 +19,7 @@ null space); the small sub-SDP  S*_i - eps dS_i(w) >= 0  is solved
 numerically (cvxpy), rationalized, and then verified exactly (LDL).  If the
 sub-SDP is infeasible, the slide does not reach q and we report that.
 
-Output: artifacts/m6/slide.json
+Output: data/conditioned_closure/slide.json
 """
 
 from __future__ import annotations
@@ -193,7 +193,7 @@ def slide_attempt(alpha: Fraction, eps: Fraction, solver: str,
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m6")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "conditioned_closure")
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--max-denominator", type=int, default=10**6)
     parser.add_argument("--alphas", nargs="+", default=["5/4", "41/32"])

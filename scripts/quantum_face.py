@@ -19,7 +19,7 @@ from npa2 import exact
 from run_m6_closure import exact_tilted_functional
 
 EXPECTED = {('1', 2), ('5/4', 2), ('41/32', 2), ('3/2', 3), ('13/10', 3)}
-ARTIFACTS = ROOT / 'artifacts/prl/quantum_face'
+ARTIFACTS = ROOT / 'data/analytic/quantum_face'
 
 
 def strategy_data(alpha, level):

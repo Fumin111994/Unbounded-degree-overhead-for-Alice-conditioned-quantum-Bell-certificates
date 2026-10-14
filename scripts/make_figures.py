@@ -4,10 +4,10 @@
 Figure 1 (level-2 closure transition), Figure 2 (level-1 family separation
 and covering argument), Figure 3 (filtration schematic).  Solver-generated
 curves are numerical; certified statements are shaded intervals and marked
-points.  Data is exported to artifacts/figures/ for the reproduction
+points.  Data is exported to data/figures/ for the reproduction
 package.
 
-Outputs: figures/fig{1,2,3}.pdf, artifacts/figures/fig{1,2}_data.json
+Outputs: figures/fig{1,2,3}.pdf, data/figures/fig{1,2}_data.json
 """
 
 from __future__ import annotations
@@ -31,7 +31,7 @@ from npa2.onesided import build_onesided_problem  # noqa: E402
 from npa2.solve import solve_problem  # noqa: E402
 
 FIGDIR = ROOT / "figures"
-ARTDIR = ROOT / "artifacts" / "figures"
+ARTDIR = ROOT / "data" / "figures"
 
 # colorblind-friendly palette
 C_EXACT = "#1f5fb4"
@@ -80,9 +80,9 @@ def q_of(a):
 
 
 def figure1() -> None:
-    fan = json.loads((ARTDIR.parent / "m65" / "tangent_fan.json").read_text())
+    fan = json.loads((ARTDIR.parent / "contact_geometry" / "tangent_fan.json").read_text())
     a_cov, a_hi = fan["covered_interval_float"]
-    root = json.loads((ARTDIR.parent / "m6" / "rootlocus.json").read_text())
+    root = json.loads((ARTDIR.parent / "conditioned_closure" / "rootlocus.json").read_text())
     slacks = {}
     for rec in root["results"]:
         slacks[rec["alpha"]] = max(
@@ -169,7 +169,7 @@ def figure1() -> None:
 
 
 def figure2() -> None:
-    cov = json.loads((ARTDIR.parent / "m26" / "anchors" / "coverage.json").read_text())
+    cov = json.loads((ARTDIR.parent / "level_one_family" / "anchors" / "coverage.json").read_text())
     anchors = [(float(__import__("fractions").Fraction(r["alpha"])),
                 float(__import__("fractions").Fraction(r["bound"])))
                for r in cov["anchors"]]

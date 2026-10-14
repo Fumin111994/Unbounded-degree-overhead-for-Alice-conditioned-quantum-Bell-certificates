@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 ROOT=Path(__file__).resolve().parents[1]
 plt.rcParams.update({'font.size':8,'axes.labelsize':8,'legend.fontsize':7,
                      'pdf.fonttype':42,'ps.fonttype':42})
-data=json.loads((ROOT/'artifacts/prl/fejer/numerical_saturation.json').read_text())
+data=json.loads((ROOT/'data/analytic/fejer/numerical_saturation.json').read_text())
 if not data['complete']:raise RuntimeError('Incomplete numerical survey')
 fig,(ax,precision)=plt.subplots(1,2,figsize=(7.0,2.85),layout='constrained')
 ax.set_title('(a) Orientation and exact degree',fontsize=8,loc='left')
@@ -78,4 +78,4 @@ precision.text(.97,.68,r'$K_*=\Theta((\lambda-1)^{-1/2})$'+'\n'+r'$g=1-\lambda^{
                transform=precision.transAxes,ha='right',fontsize=7,
                bbox={'facecolor':'white','edgecolor':'none','alpha':.85,'pad':2})
 fig.savefig(ROOT/'figures/prl_contact_costs.pdf')
-fig.savefig(ROOT/'artifacts/prl/contact_transition/degree_costs.png',dpi=220)
+fig.savefig(ROOT/'data/analytic/contact_transition/degree_costs.png',dpi=220)

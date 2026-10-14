@@ -10,7 +10,7 @@ marginals.  Hence:
 A candidate with non-equal |c_xy| and >= 2 nonzero marginals is outside the
 equivalence closure of all catalogued families.
 
-Output: artifacts/m65/invariants.json
+Output: data/contact_geometry/invariants.json
 """
 
 from __future__ import annotations
@@ -32,7 +32,7 @@ CANDIDATES = [
 def main() -> int:
     out = []
     for name, index in CANDIDATES:
-        report = json.loads((ROOT / "artifacts" / "m3" / name / "results.json").read_text())
+        report = json.loads((ROOT / "data" / "finite_separations" / name / "results.json").read_text())
         record = next(r for r in report["records"] if r["index"] == index)
         corr = [record["corr"][f"{x}{y}"] for x in (0, 1) for y in (0, 1)]
         abs_entries = sorted(abs(v) for v in corr)
@@ -55,7 +55,7 @@ def main() -> int:
             "os2": record["os2"],
             "novel": (not chsh_type) and marg_nonzero >= 2,
         })
-    path = ROOT / "artifacts" / "m65"
+    path = ROOT / "data" / "contact_geometry"
     path.mkdir(parents=True, exist_ok=True)
     (path / "invariants.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
     print(json.dumps(out, indent=2))

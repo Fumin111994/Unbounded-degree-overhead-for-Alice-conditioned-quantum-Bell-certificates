@@ -7,7 +7,7 @@ omega_1^os(F_{1/4}) >= rational > sqrt(8.125).  Since the almost-quantum
 value of tilted CHSH equals the quantum value (Bamps-Pironio), this
 certifies O_1^beh strictly contains Q-tilde^beh.
 
-Output: artifacts/m65/sandwich.json
+Output: data/contact_geometry/sandwich.json
 """
 
 from __future__ import annotations
@@ -33,7 +33,7 @@ ALPHA = Fraction(1, 4)
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m65")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "contact_geometry")
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--max-denominator", type=int, default=10**8)
     args = parser.parse_args()

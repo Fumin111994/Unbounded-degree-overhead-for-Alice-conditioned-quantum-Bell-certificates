@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-rows = json.loads((ROOT / "artifacts/prl/randomness/curve.json").read_text())["records"]
+rows = json.loads((ROOT / "data/analytic/randomness/curve.json").read_text())["records"]
 x = np.array([r["chsh"] for r in rows])
 y = np.array([1000*np.log2(r["os2"]/r["quantum_guess"]) for r in rows])
 plt.rcParams.update({"font.size": 8, "axes.labelsize": 8, "xtick.labelsize": 7,
@@ -31,4 +31,4 @@ ax.spines[["top", "right"]].set_visible(False)
 ax.legend(loc="upper right", bbox_to_anchor=(1, 1.1), frameon=False, fontsize=6.7)
 fig.tight_layout(pad=.7)
 fig.savefig(ROOT / "figures/prl_randomness_cost.pdf", bbox_inches="tight")
-fig.savefig(ROOT / "artifacts/prl/randomness/figure.png", dpi=180, bbox_inches="tight")
+fig.savefig(ROOT / "data/analytic/randomness/figure.png", dpi=180, bbox_inches="tight")

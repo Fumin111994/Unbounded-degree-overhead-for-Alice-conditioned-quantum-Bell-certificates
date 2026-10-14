@@ -7,7 +7,7 @@ level-2 dual certificate with bound B = omega_std^2 + eps (eps = 1e-6):
 proving omega_os^2(G) <= omega_std^2(G) + eps exactly, i.e. the two cones
 agree on this functional up to 1e-6 (contrast with the separated candidates).
 
-Output: artifacts/m65/transport_control.json
+Output: data/contact_geometry/transport_control.json
 """
 
 from __future__ import annotations
@@ -35,10 +35,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--results", type=Path,
-        default=ROOT / "artifacts" / "m3" / "search" / "results.json",
+        default=ROOT / "data" / "finite_separations" / "search" / "results.json",
     )
     parser.add_argument("--index", type=int, default=5)
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m65")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "contact_geometry")
     parser.add_argument("--solver", default="CLARABEL")
     args = parser.parse_args()
 

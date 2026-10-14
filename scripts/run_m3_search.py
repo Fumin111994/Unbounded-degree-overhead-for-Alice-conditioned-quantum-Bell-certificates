@@ -17,7 +17,7 @@ Flags (tolerances in --help):
 - ``novel``:       not XOR (some marginal nonzero) and not tilted-like
                    (CHSH correlator + at most one nonzero marginal component)
 
-Output: artifacts/m3/search/results.json
+Output: data/finite_separations/search/results.json
 """
 
 from __future__ import annotations
@@ -79,7 +79,7 @@ def solve_with_fallback(model, solvers=("CLARABEL", "SCS")):
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m3" / "search")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "finite_separations" / "search")
     parser.add_argument("--count", type=int, default=200)
     parser.add_argument("--seed", type=int, default=20260815)
     parser.add_argument("--closure-tol", type=float, default=1e-5)

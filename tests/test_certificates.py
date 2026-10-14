@@ -17,7 +17,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 class CertificateVerificationTests(unittest.TestCase):
     def test_verify_certificates_all_pass(self) -> None:
-        if not (ROOT / "artifacts" / "m3" / "exact" / "search_s31337_308.json").exists():
+        if not (ROOT / "data" / "finite_separations" / "exact" / "search_s31337_308.json").exists():
             self.skipTest("artifact tree not present")
         import verify_certificates
 

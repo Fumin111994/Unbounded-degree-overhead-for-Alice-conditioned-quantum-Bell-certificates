@@ -31,7 +31,7 @@ and block (1,1) = swap(Q).  Consistency sum_a Phi_{0a} = sum_a Phi_{1a}:
 Normalization: p + p' = 1.
 Objective: F = alpha (p - p') + 4 (u - u') - 2 (p - p') + 4 (v0 - v1).
 
-Output: artifacts/m6/reduced_check.json
+Output: data/conditioned_closure/reduced_check.json
 """
 
 from __future__ import annotations
@@ -100,7 +100,7 @@ def build_reduced(alpha: float) -> cp.Problem:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m6")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "conditioned_closure")
     parser.add_argument("--alphas", nargs="+", type=float,
                         default=[0.0, 0.25, 0.5, 1.0, 1.25, 1.3, 1.5])
     args = parser.parse_args()

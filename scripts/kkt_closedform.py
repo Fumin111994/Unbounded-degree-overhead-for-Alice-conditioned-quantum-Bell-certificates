@@ -13,7 +13,7 @@ Regime II, alpha_c <= alpha < 2:  omega is the unique root in (2.8, 4) of
 
 Checked against build_onesided_problem(..., 1, enforce_probability_positivity=False)
 solved with CLARABEL, on the m26 grid plus off-grid points.  Idempotent:
-overwrites artifacts/m26/kkt/closedform_check.json.
+overwrites data/level_one_family/kkt/closedform_check.json.
 """
 
 from __future__ import annotations
@@ -31,8 +31,8 @@ from npa2.bell import tilted_chsh  # noqa: E402
 from npa2.onesided import build_onesided_problem  # noqa: E402
 from npa2.solve import solve_problem  # noqa: E402
 
-OUT_PATH = Path("artifacts/m26/kkt/closedform_check.json")
-GRID_PATH = Path("artifacts/m26/grid/grid.json")
+OUT_PATH = Path("data/level_one_family/kkt/closedform_check.json")
+GRID_PATH = Path("data/level_one_family/grid/grid.json")
 ALPHA_C = 1 - 1 / math.sqrt(3)
 
 

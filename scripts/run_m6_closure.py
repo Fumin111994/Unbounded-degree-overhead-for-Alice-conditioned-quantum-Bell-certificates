@@ -16,7 +16,7 @@ Two sides of the critical tilt:
    (exact comparison by squaring).
 
 Solvers are used only to find candidates; verification is exact.
-Output: artifacts/m6/closure/<alpha_tag>.json, artifacts/m6/summary.json
+Output: data/conditioned_closure/closure/<alpha_tag>.json, data/conditioned_closure/summary.json
 """
 
 from __future__ import annotations
@@ -257,7 +257,7 @@ def find_nonclosure_witness(alpha: Fraction, solver: str,
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=ROOT / "artifacts" / "m6")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "conditioned_closure")
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--max-denominator", type=int, default=10**6)
     parser.add_argument("--witness-max-denominator", type=int, default=10**8)

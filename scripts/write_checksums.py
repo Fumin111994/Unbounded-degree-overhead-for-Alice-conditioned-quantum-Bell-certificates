@@ -11,19 +11,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 TREES = [
-    "artifacts/prl/interval",
-    "artifacts/prl/standard_tilted",
-    "artifacts/prl/quantum_face",
-    "artifacts/m25/exact",
-    "artifacts/m25/fulloutcome",
-    "artifacts/m26/grid",
-    "artifacts/m26/family",
-    "artifacts/m26/anchors",
-    "artifacts/m3/exact",
-    "artifacts/m3/candidates",
-    "artifacts/m65",
-    "artifacts/m6",
-    "artifacts/figures",
+    "data/analytic/interval",
+    "data/analytic/standard_tilted",
+    "data/analytic/quantum_face",
+    "data/level_one_exact/exact",
+    "data/level_one_exact/fulloutcome",
+    "data/level_one_family/grid",
+    "data/level_one_family/family",
+    "data/level_one_family/anchors",
+    "data/finite_separations/exact",
+    "data/finite_separations/candidates",
+    "data/contact_geometry",
+    "data/conditioned_closure",
+    "data/figures",
     "figures",
 ]
 

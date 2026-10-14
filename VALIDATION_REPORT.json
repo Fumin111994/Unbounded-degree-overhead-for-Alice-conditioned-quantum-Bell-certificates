@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "version": "0.3.0",
+  "date": "2026-10-14",
+  "current_exact_checks": 8,
+  "analytic_exact_groups": 28,
+  "analytic_reproduction_stages": 6,
+  "relative_accuracy_symbolic_checks": 13,
+  "relative_figure_thresholds": 260,
+  "unit_tests": 66,
+  "scope": "Exact certificate checks, symbolic identities, public path migration and numerical control tests; universal theorems are established in the manuscript proofs."
+}

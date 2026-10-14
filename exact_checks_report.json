@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "command": "python research/bidirectional_coupling/verify_bidirectional_coupling.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python research/bidirectional_coupling/verify_scope_extensions.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python research/bidirectional_coupling/verify_mixed_separation.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python research/bidirectional_coupling/verify_quantum_target_family.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python research/mixed_divergence/verify_degree_pair.py --mutation-checks",
+      "status": "PASS"
+    },
+    {
+      "command": "python research/mixed_divergence/verify_mixed_upper.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python research/mixed_divergence/verify_standard_lower.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python research/mixed_divergence/verify_corner_obstruction.py",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Accompanying exact proofs; no claim of all-level mixed divergence."
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 2,
+  "full": false,
+  "results": [
+    {
+      "name": "certificate_checks",
+      "command": "C:\\Users\\10446\\AppData\\Local\\Programs\\Python\\Python312\\python.exe scripts/verify_certificates.py",
+      "returncode": 0,
+      "seconds": 94.2,
+      "status": "PASS",
+      "tail": [
+        "  \"failures\": [],",
+        "  \"seconds\": 84.7",
+        "}"
+      ]
+    },
+    {
+      "name": "m2_artifact_verifier",
+      "command": "C:\\Users\\10446\\AppData\\Local\\Programs\\Python\\Python312\\python.exe scripts/verify_results.py",
+      "returncode": 0,
+      "seconds": 3.2,
+      "status": "PASS",
+      "tail": [
+        "  \"failures\": [],",
+        "  \"status\": \"PASS\"",
+        "}"
+      ]
+    },
+    {
+      "name": "m25_exact_verify_only",
+      "command": "C:\\Users\\10446\\AppData\\Local\\Programs\\Python\\Python312\\python.exe scripts/run_exact_level1.py --verify-only",
+      "returncode": 0,
+      "seconds": 2.6,
+      "status": "PASS",
+      "tail": [
+        "  },",
+        "  \"status\": \"PASS\"",
+        "}"
+      ]
+    },
+    {
+      "name": "m26_standard_family",
+      "command": "C:\\Users\\10446\\AppData\\Local\\Programs\\Python\\Python312\\python.exe scripts/run_level1_family.py",
+      "returncode": 0,
+      "seconds": 4.3,
+      "status": "PASS",
+      "tail": [
+        "  \"failures\": [],",
+        "  \"objective\": \"alpha + 2*sqrt(2)\"",
+        "}"
+      ]
+    },
+    {
+      "name": "m26_anchors_coverage",
+      "command": "C:\\Users\\10446\\AppData\\Local\\Programs\\Python\\Python312\\python.exe scripts/run_level1_anchors.py --coverage-only",
+      "returncode": 0,
+      "seconds": 2.8,
+      "status": "PASS",
+      "tail": [
+        "  \"status\": \"PASS\",",
+        "  \"covered_interval\": \"(0, 2)\"",
+        "}"
+      ]
+    },
+    {
+      "name": "m3_exact_verify_only",
+      "command": "C:\\Users\\10446\\AppData\\Local\\Programs\\Python\\Python312\\python.exe scripts/run_m3_exactify.py --verify-only",
+      "returncode": 0,
+      "seconds": 2.6,
+      "status": "PASS",
+      "tail": [
+        "  \"status\": \"PASS\",",
+        "  \"failures\": []",
+        "}"
+      ]
+    }
+  ],
+  "status": "PASS",
+  "failures": []
+}

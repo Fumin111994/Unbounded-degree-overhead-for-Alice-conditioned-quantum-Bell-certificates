@@ -39,7 +39,7 @@ If identification fails for some entry, the certificate is marked
 "unverified" and the high-precision transitional data (entries accurate to
 ~delta, Newton residuals) is stored instead, per project fallback policy.
 
-Idempotent: artifacts/m6/closure_exact.json is rewritten deterministically
+Idempotent: data/conditioned_closure/closure_exact.json is rewritten deterministically
 on every run (per-alpha keys replaced, other keys preserved).
 
 Usage:
@@ -766,7 +766,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--alphas", nargs="+", default=["5/4", "41/32"])
     parser.add_argument("--output", type=Path,
-                        default=ROOT / "artifacts" / "m6" / "closure_exact.json")
+                        default=ROOT / "data" / "conditioned_closure" / "closure_exact.json")
     parser.add_argument("--solver", default="CLARABEL")
     parser.add_argument("--dps", type=int, default=250)
     parser.add_argument("--delta-schedule", nargs="+", type=int,

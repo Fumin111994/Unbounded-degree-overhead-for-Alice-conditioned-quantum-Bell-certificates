@@ -9,7 +9,7 @@ marginal m(A_{a|x}) and each Bob marginal m(B_{b|y})) it computes the minimum
 and the maximum over both moment bodies and compares the optima.  It also
 compares the optima of the actual control functionals.
 
-Output: artifacts/m25/fulloutcome/comparison.json
+Output: data/level_one_exact/fulloutcome/comparison.json
 """
 
 from __future__ import annotations
@@ -109,7 +109,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=ROOT / "artifacts" / "m25" / "fulloutcome",
+        default=ROOT / "data" / "level_one_exact" / "fulloutcome",
     )
     parser.add_argument("--solvers", nargs="+", default=["CLARABEL", "SCS"])
     parser.add_argument("--levels", nargs="+", type=int, default=[1, 2])
